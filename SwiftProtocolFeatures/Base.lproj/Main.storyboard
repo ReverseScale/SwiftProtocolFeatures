@@ -27,11 +27,20 @@
                                 <color key="textColor" red="0.40784313729999999" green="0.40784313729999999" blue="0.40784313729999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="ynl-wY-q29">
+                                <rect key="frame" x="127" y="168" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="47K-fG-e6z"/>
+                                    <constraint firstAttribute="width" constant="120" id="5Yn-1v-e0U"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="Mlw-sr-Hsp" firstAttribute="top" secondItem="ynl-wY-q29" secondAttribute="bottom" constant="29" id="BXx-ye-TSQ"/>
                             <constraint firstItem="Mlw-sr-Hsp" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="guW-uk-WuL"/>
                             <constraint firstItem="Mlw-sr-Hsp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ha1-WE-BvA"/>
+                            <constraint firstItem="ynl-wY-q29" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="vuV-w7-8Ac"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,4 +48,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon" width="60" height="60"/>
+    </resources>
 </document>
