@@ -945,4 +945,6 @@ print(circulars.textualDescription)
 // [The circular's radius is 1, The circular's radius is 2]
 ```
 
-这里扩展了 Collection 协议，但是限制只适用于集合中的元素遵循了 TextRepresentable 协议的情况。 因为 Swift 中 Array 符合 Collection 协议，而 Circular 类型又符合 TextRepresentable 协议，所以 circulars 可以使用 textualDescription 属性得到数组内容的文本表示
+这里扩展了 Collection 协议，但是限制只适用于集合中的元素遵循了 TextRepresentable 协议的情况。 因为 Swift 中 Array 符合 Collection 协议，而 Circular 类型又符合 TextRepresentable 协议，所以 circulars 可以使用 textualDescription 属性得到数组内容的文本表示。
+
+注：示例工程中仅仅展示一小部分，仅供入门参考。
