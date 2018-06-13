@@ -20,6 +20,13 @@ class ViewController: UIViewController {
         class Donkey: SuperAnimal {}
         let ramon = Donkey()
         ramon.canChange()
+        
+        let btn = UIButton()
+        btn.shake()
+        
+        let myClass = MyClass()
+        myClass.delegate = ViewSubclass() //这个编译正常
+        //        myClass.delegate = View() //这个编译报错:
     }
     
     override func didReceiveMemoryWarning() {
@@ -42,7 +49,7 @@ protocol Human {
 
 struct Korean:Human {
     var name:String = "阿西吧先生"
-    var race:String = "棒子族"
+    var race:String = "🇰🇷"
     func sayHi() {
         print("阿西吧阿西吧巴巴~")
     }
@@ -50,7 +57,7 @@ struct Korean:Human {
 
 struct American:Human {
     var name:String = "法克先生"
-    var race:String = "白鬼族"
+    var race:String = "🇺🇸"
     func sayHi() {
         print("法克法克法克鱿~")
     }
@@ -85,7 +92,7 @@ struct KoreanSuperHuman:Human, superHuman {
         print("阿西吧思密达")
     }
     
-    var race: String = "SB 👽"
+    var race: String = "来自✨的👽"
     
     
     var name: String = "思密达先生"
@@ -99,8 +106,41 @@ protocol SuperAnimal {
 }
 
 extension SuperAnimal {
-
     func canChange() {
-        print("我是超级动物，我能变身乌龟人~")
+        print("我是动物系超人，我能变身乌龟人~")
     }
 }
+
+// swift 4 新特性：把类（Class）和协议（Protocol）用 & 组合在一起作为一个类型使用
+// to UIKit
+protocol Shakeable {
+    func shake()
+}
+
+extension UIButton: Shakeable {
+    func shake() {
+        print("hello button shake..")
+    }
+}
+
+extension UISlider: Shakeable {
+    func shake() {
+        /* ... */
+    }
+}
+// to Class
+protocol MyProtocol { }
+
+class View { }
+
+class ViewSubclass: View, MyProtocol { }
+
+class MyClass {
+    var delegate: (View & MyProtocol)?
+}
+
+
+
+
+
+
